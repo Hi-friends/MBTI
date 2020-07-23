@@ -1,0 +1,30 @@
+{% extends 'page/base.html' %}
+{% block content %}
+<div class="table-responsive-vertical shadow-z-1">
+<!-- Table starts here -->
+<table id="table" class="table table-hover table-mc-light-blue">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>MBTI</th>
+        <th>Match_score</th>
+        <th>Region</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for match in matches %}
+      {% for user in users %}
+      {% if match.mbti2 == user.mbti1 %}
+      <tr>
+        <td data-title="ID">{{ user.id }}</td>
+        <td data-title="MBTI">{{ user.mbti1 }}</td>
+        <td data-title="Match_score">{{ match.match_score }}</td>
+        <td data-title="Region">{{ user.region }}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

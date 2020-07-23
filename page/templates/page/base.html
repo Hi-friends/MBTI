@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+li a {
+  display:block;
+  width:100%;
+  height:40px;
+  background:grey;
+  color:black;
+  border:1px;
+  font-size:12px;
+  text-align:center;
+  padding-top:10px;
+  text-decoration:none;
+}
+li a span {
+  display:block;
+}
+li a:hover {
+  background:#099;
+  text-decoration:none;
+}
+</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="demo">
+  <h1><a href="/main/list/">Check your friend's MBTI</a></h1>
+  <h2>Table of MBTI</h2>
+  <ul style="list-style:none;width:100%;margin-left:auto;margin-right:auto;">
+    <li style="float:left;width:19%;list-style:none;margin:1px;">
+      <a href="/main/entire/"><span>ENTIRE MBTI</span></a></li>
+    <li style="float:left;width:19%;list-style:none;margin:1px;">
+      <a href="/main/same/"><span>SAME MBTI</span></a></li>
+    <li style="float:left;width:19%;list-style:none;margin:1px;">
+      <a href="/main/detail1/"><span>SAME DETAIL</span></a></li>
+    <li style="float:left;width:19%;list-style:none;margin:1px;">
+      <a href="/main/match/"><span>MATCH MBTI</span></a></li>
+    <li style="float:left;width:19%;list-style:none;margin:1px;">
+      <a href="/main/detail2/"><span>MATCH DETAIL</span></a></li>
+  </ul>
+
+  <!-- Responsive table starts here -->
+  <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+  {% block content %}
+
+  {% endblock %}
+
+</div>
+<!-- partial -->
+  <script  src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{% static 'css/r_style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="form">
+    <h1>Register</h1>
+    <form method="post" class="post-form">{% csrf_token %}
+      <p>
+        <label style="color:white;">
+          ID<span class="req">*</span>
+        </label>
+        <input type="text" name="id" placeholder="ID">
+      </p>
+      <p>
+        <label style="color:white;">
+          MBTI<span class="req">*</span>
+        </label>
+        <select name="mbti1">
+          <option selected="selected" disabled></option>
+          <option value="INFP">INFP</option>
+          <option value="ENFP">ENFP</option>
+          <option value="INFJ">INFJ</option>
+          <option value="ENFJ">ENFJ</option>
+          <option value="INTJ">INTJ</option>
+          <option value="ENTJ">ENTJ</option>
+          <option value="INTP">INTP</option>
+          <option value="ENTP">ENTP</option>
+          <option value="ISFP">ISFP</option>
+          <option value="ESFP">ESFP</option>
+          <option value="ISTP">ISTP</option>
+          <option value="ESTP">ESTP</option>
+          <option value="ISFJ">ISFJ</option>
+          <option value="ESFJ">ESFJ</option>
+          <option value="ISTJ">ISTJ</option>
+          <option value="ESTJ">ESTJ</option>
+        </select>
+      </p>
+      <p>
+        <label style="color:white;">
+          Region<span class="req">*</span>
+        </label>
+        <select name="region">
+          <option selected="selected" disabled></option>
+          <option value="Seoul">Seoul</option>
+          <option value="Busan">Busan</option>
+          <option value="Daegu">Daegu</option>
+          <option value="Incheon">Incheon</option>
+          <option value="Gwangju">Gwangju</option>
+          <option value="Daejeon">Daejeon</option>
+          <option value="Ulsan">Ulsan</option>
+          <option value="Sejong">Sejong</option>
+          <option value="Gyeonggi">Gyeonggi</option>
+          <option value="Gangwon">Gangwon</option>
+          <option value="Chungbuk">Chungbuk</option>
+          <option value="Chungnam">Chungnam</option>
+          <option value="Jeonbuk">Jeonbuk</option>
+          <option value="Jeonnam">Jeonnam</option>
+          <option value="Gyeongbuk">Gyeongbuk</option>
+          <option value="Gyeongnam">Gyeongnam</option>
+          <option value="Jeju">Jeju</option>
+        </select>
+      </p>
+      <p>
+        <label style="color:white;">
+          Age<span class="req">*</span>
+        </label>
+        <input type="text" name="age" placeholder="Age">
+      </p>
+      <p style="color:white;">
+        <label style="color:white;">
+          Sex<span class="req">*</span>
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="sex" value="M" >Male
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="sex" value="F">Female
+      </p>
+
+      <button type="submit" class="button button-block"/>
+      Get Started</button>
+    </form>
+
+</div> <!-- /form -->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="js/r_script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'page/base.html' %}
+{% block content %}
+<div class="table-responsive-vertical shadow-z-1">
+<!-- Table starts here -->
+<table id="table" class="table table-hover table-mc-light-blue">
+    <thead>
+      <tr>
+        <th>MBTI</th>
+        <th>Ratio</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td data-title="MBTI">{{ user.mbti1 }}</td>
+        <td data-title="Ratio">{{ user.num_mbtis }} %</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

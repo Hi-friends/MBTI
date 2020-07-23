@@ -1,0 +1,28 @@
+{% extends 'page/base.html' %}
+{% block content %}
+<div class="table-responsive-vertical shadow-z-1">
+<!-- Table starts here -->
+<table id="table" class="table table-hover table-mc-light-blue">
+    <thead>
+      <tr>
+        <th>MBTI</th>
+        <th>Region</th>
+        <th>Age_ratio</th>
+        <th>Sex_ratio</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user, age in formset %}
+      {% for sex in wholesex %}
+      <tr>
+        <td data-title="MBTI">{{ user.mbti1 }}</td>
+        <td data-title="Region">{{ user.region }}</td>
+        <td data-title="Age_ratio">{{ user.age }}, {{ age.num_ages }}%</td>
+        <td data-title="Sex_ratio">{{ sex.sex }}, {{ sex.num_sex }}%</td>
+      </tr>
+      {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
